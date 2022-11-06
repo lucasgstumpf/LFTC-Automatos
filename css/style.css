@@ -1,0 +1,21 @@
+
+.container{
+    margin-top:  1% !important;
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-end;
+    
+}
+
+.texto{
+    margin-top: 8px !important;
+}
+
+.container a{
+    margin-top: 10px;
+    margin-right: 15px;
+}
+
