@@ -19,3 +19,15 @@
     margin-right: 15px;
 }
 
+.b-bottom a:hover{
+    border-bottom: 5px solid #fff;
+}
+
+.b-active-bottom{
+    border-bottom: 5px solid #fff;
+}
+
+.b-active-bottom:hover{
+    border-bottom: 5px solid rgb(87, 86, 86);
+}
+
