@@ -36,7 +36,7 @@ btnTeste.addEventListener("click", function (e) {
         inicio
     );
 
-    let validacao = saida.getFinishedRoot(raiz);
+    let validacao = saida.getFinishedRoot(inicio);
 
     if (validacao) {
         inputTeste.style.backgroundColor = "green";
