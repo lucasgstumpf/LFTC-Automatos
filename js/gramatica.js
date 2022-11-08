@@ -3,45 +3,43 @@
 
 const btnTeste = document.querySelector("#sendTeste");
 
+
+//Função é chamada quando o botão é clicado
 btnTeste.addEventListener("click", function (e) {
     e.preventDefault();
 
+    //Inputs e tratamentos de erros
     var inputArea = document.getElementById("inputArea");
     var inputAreaTxt = inputArea.value;
     inputAreaTxt = inputAreaTxt.replace(/([A-Z])/g, ' $1');
     inputAreaTxt = inputAreaTxt.split("\n");
     console.log(inputAreaTxt);
-
     var inputTeste = document.getElementById("inputTeste");
-    let token = inputTeste.value.split('');
-    
+    let teste = inputTeste.value.split('');
 
-    // biblioteca de gramática
+
+    //Função que valida a gramatica do input, o parametro é a gramatica em si em formato de array.
     try {
         var gramatica = new tinynlp.Grammar(inputAreaTxt);
         inputArea.style.backgroundColor = "white"
-      } catch (error) {
+    } catch (error) {
         console.error(error);
         inputArea.style.backgroundColor = "red"
-      }
+    }
 
-    // definindo a raiz
-    const raiz = inputAreaTxt[0][1]
+    const inicio = inputAreaTxt[0][1]
 
-    // contruindo o analizador
+    //Função que valida o teste do input, nesta função os parametros são os Tokens(Array),a gramatica, e o inicio da gramatica, que é dado pela primeira letra.
     let saida = tinynlp.parse(
-        token,
+        teste,
         gramatica,
-        raiz
+        inicio
     );
 
-    // análise finalizadas
-    let estado = saida.getFinishedRoot(raiz);
+    let validacao = saida.getFinishedRoot(raiz);
 
-    if (estado) {
-        console.log("Entrou no if")
+    if (validacao) {
         inputTeste.style.backgroundColor = "green";
-        return;
     }
     else {
         inputTeste.style.backgroundColor = "red"
