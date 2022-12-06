@@ -3,6 +3,7 @@
 <head>
 
   <link rel="stylesheet" href="..\css\style.css">
+  <link rel="stylesheet" href="..\css\automato.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
@@ -12,8 +13,7 @@
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-  <script src="..\js\gramatica.js" defer></script>
-  <script src="..\js\earley-parser.min.js" defer></script>
+  <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
 
 </head>
 
@@ -33,11 +33,11 @@
             <li class="nav-item b-bottom">
               <a class="nav-link text-white fw-semibold" href="regex.html">Regex</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link text-white text-bold active b-active-bottom fw-bold">Gramática</a>
-            </li>
             <li class="nav-item b-bottom">
-              <a class="nav-link text-white fw-semibold" href="automato_finito.html">Automato Finito</a>
+              <a class="nav-link text-white fw-semibold" href="gramatica.html">Gramática</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link text-white fw-bold active b-active-bottom">Automato Finito</a>
             </li>
           </ul>
         </div>
@@ -45,30 +45,22 @@
     </nav>
   </section>
 
-  <section id="services">
-    <div class=" w-50 m-auto">
-      <div class="row text-center ">
-        <div class="col-6">
-          <div class="form-floating">
-            <p class="text-white">Digite aqui sua gramatica! Obs: A primeira letra é a raiz, e deve seguir o padrao "S->aB" e unitário </p>
-            <textarea class="form-control" placeholder="Leave a comment here" id="inputArea"
-              style="height: 200px; width: 700px"></textarea>
-           
-          </div>
+  <section>
 
-          <div class="row text-center mt-5 ">
-            <div class="form-floating">
-              <textarea class="form-control" placeholder="Leave a comment here" id="inputTeste"
-                style="height: 75px; width: 700px"></textarea>
-              <label for="floatingTextarea2">Digite aqui seu teste:</label>
-            </div>
-            <button type="submit" class="btn btn-primary mt-3 ms-2" style="height: 40px; width: 200px"
-              id="sendTeste">Testar</button>
-          </div>
-        </div>
-  </section>
+    <div class="buttons d-flex justify-content-around w-50 m-auto">
+        <button class="btn btn-light ms-3" onclick="addState(nodes)">Novo Estado</button>
+        <button class="btn btn-light mr-3" onclick="addEdgeInTheNetwork()">Criar Transição</button>
+        <button class="btn btn-light mr-5" onclick="deleteEdgeMode()">Excluir Estado</button>
+        <button class="btn btn-light mr-5" onclick="setInitial()">Setar inicial</button>
+        <button class="btn btn-light mr-5" onclick="setFinal()">Setar Final</button>
+    </div>
+   </section>
+  
+
+    <div id="mynetwork"></div>
 
 
+    <script src='..\js\automato.js'></script>
 </body>
 
 </html>
