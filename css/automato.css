@@ -5,3 +5,28 @@
     margin: 20px auto;
     background-color: white;
 }
+
+.automatoStatus{
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.success{
+    background-color: #19c203;
+    color: #FFF;
+    border: 1px solid #19c203;
+}
+
+.fail{
+    background-color: #d10303;
+    color: #FFF;
+    border: 1px solid #d10303;
+}
+
+.forms{
+    width: 600px;
+    margin: 0 auto;
+}
